@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>재무 실무 포트폴리오 — 김도현</title>
+<style>
+:root{
+  --ink:#1b201d; --ink2:#3d4641; --muted:#6a736e; --rule:#d6dcd7; --rule2:#e7ebe8;
+  --soft:#f4f6f4; --accent:#1f5c46; --accent2:#e7f0ea; --warn:#8a5a20; --warnbg:#f8f2e7;
+}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+body{
+  margin:0; background:#e8ebe8; color:var(--ink);
+  font-family:"Pretendard","Malgun Gothic","맑은 고딕","Apple SD Gothic Neo",sans-serif;
+  font-size:9.6pt; line-height:1.58; word-break:keep-all; overflow-wrap:break-word;
+}
+.sheet{width:210mm; min-height:297mm; margin:10mm auto; background:#fff; padding:13mm 14mm 15mm; box-shadow:0 1px 6px rgba(0,0,0,.12)}
+@page{size:A4; margin:13mm 14mm 15mm; @bottom-left{content:"김도현 · 재무 실무 포트폴리오"; font-family:"Malgun Gothic",sans-serif; font-size:7.5pt; color:#8a938e} @bottom-right{content:counter(page) " / " counter(pages); font-family:"Malgun Gothic",sans-serif; font-size:7.5pt; color:#8a938e}}
+@media print{
+  body{background:#fff}
+  .sheet{margin:0; box-shadow:none; width:auto; min-height:0; padding:0; break-after:page}
+  .sheet:last-child{break-after:auto}
+}
+p{margin:0}
+.kicker{font-size:7.4pt; font-weight:700; letter-spacing:.14em; color:var(--accent); text-transform:uppercase}
+h1{font-size:21pt; line-height:1.28; margin:2.5mm 0 2mm; letter-spacing:-.01em}
+h2{font-size:14.5pt; line-height:1.3; margin:1.2mm 0 0; letter-spacing:-.01em}
+h3{font-size:9.8pt; margin:0 0 1.6mm; color:var(--accent); display:flex; align-items:center; gap:1.6mm; flex-wrap:wrap}
+h3 .n{display:inline-flex; width:4.4mm; height:4.4mm; border-radius:50%; background:var(--accent); color:#fff; font-size:7pt; align-items:center; justify-content:center}
+h3 .note{font-weight:400}
+h4{font-size:9.2pt; margin:0 0 1mm; color:var(--ink)}
+.sub{color:var(--ink2); font-size:10pt}
+.who{margin-top:4mm; display:flex; gap:5mm; font-size:9pt; color:var(--ink2)}
+.who b{color:var(--ink)}
+.rule{border:0; border-top:2px solid var(--ink); margin:5mm 0 4mm}
+.head{border-bottom:1px solid var(--rule); padding-bottom:3mm; margin-bottom:3.6mm}
+.contd{display:flex; align-items:baseline; gap:3mm; border-bottom:1px solid var(--rule); padding-bottom:2.2mm; margin-bottom:4mm}
+.contd .t{font-weight:700; font-size:10.5pt}
+.contd .kicker{letter-spacing:.1em}
+.meta{display:flex; flex-wrap:wrap; gap:1.4mm 1.6mm; margin-top:2.2mm}
+.meta span{font-size:8pt; padding:.5mm 2mm; border:1px solid var(--rule); border-radius:1mm; color:var(--ink2); background:#fff}
+.meta span.job{border-color:var(--accent); color:var(--accent); background:var(--accent2); font-weight:600}
+.lead{font-size:10pt; color:var(--ink); margin-bottom:4mm}
+.lead + .lead{margin-top:-2mm}
+.block{margin-bottom:var(--bm,4.4mm)}
+.grid2{display:grid; grid-template-columns:1.5fr 1fr; gap:5mm}
+.half{display:grid; grid-template-columns:1fr 1fr; gap:5mm}
+.grid3{display:grid; grid-template-columns:1fr 1fr 1fr; gap:3.5mm}
+ul{margin:0; padding-left:4.2mm}
+li{margin:.4mm 0}
+li::marker{color:var(--muted)}
+.muted{color:var(--muted)}
+.b{font-weight:700}
+table.t{width:100%; border-collapse:collapse; font-size:8.8pt; line-height:1.45}
+table.t th{background:var(--soft); text-align:left; font-weight:700; color:var(--ink2); padding:1.3mm 1.8mm; border-top:1.5px solid var(--ink); border-bottom:1px solid var(--rule)}
+table.t td{padding:1.3mm 1.8mm; border-bottom:1px solid var(--rule2); vertical-align:top}
+table.t tr.pick td{background:var(--accent2)}
+table.t td.r, table.t th.r{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+table.t td.k{font-weight:700; color:var(--ink2); white-space:nowrap}
+.box{background:var(--soft); border-radius:1.4mm; padding:2.6mm 3mm}
+.ai{background:var(--accent2); border-left:2.5px solid var(--accent); border-radius:0 1.4mm 1.4mm 0; padding:2.6mm 3mm}
+.ai .tag{font-size:7.4pt; font-weight:700; letter-spacing:.1em; color:var(--accent); margin-bottom:1mm}
+.ai dl{margin:0}
+.ai dt{font-weight:700; font-size:8.2pt; color:var(--ink2); margin-top:1.2mm}
+.ai dt:first-child{margin-top:0}
+.ai dd{margin:0; font-size:8.9pt}
+.warn{background:var(--warnbg); border-left:2.5px solid var(--warn); border-radius:0 1.4mm 1.4mm 0; padding:2.2mm 3mm; font-size:8.9pt}
+.warn b{color:var(--warn)}
+.stats{display:grid; grid-template-columns:1fr 1fr; gap:3mm}
+.stat{border:1px solid var(--rule); border-radius:1.4mm; padding:2.4mm 3mm}
+.stat .v{font-size:13pt; font-weight:800; color:var(--accent); line-height:1.2}
+.stat .l{font-size:8.6pt; color:var(--ink2); margin-top:.6mm}
+.out{border-top:1px solid var(--rule); padding-top:2.4mm; margin-top:3.4mm; font-size:8.9pt; color:var(--ink2)}
+.out b{color:var(--ink)}
+.lesson{margin-top:2.6mm; font-size:9.3pt; color:var(--ink2); padding-left:3mm; border-left:2.5px solid var(--rule)}
+.flow{display:flex; gap:1.2mm; align-items:stretch; font-size:8.4pt; margin-top:1.6mm}
+.flow div{flex:1; border:1px solid var(--rule); border-radius:1.2mm; padding:1.4mm 1.8mm; background:#fff}
+.flow div b{display:block; font-size:7.6pt; color:var(--accent)}
+.formula{font-size:8.9pt; background:#fff; border:1px dashed var(--rule); border-radius:1.2mm; padding:1.6mm 2.4mm; margin-top:1.4mm}
+.note{font-size:8.4pt; color:var(--muted)}
+.sim{display:grid; grid-template-columns:1fr 1fr 1fr; gap:3.4mm}
+.sim > div{border:1px solid var(--rule); border-radius:1.4mm; padding:2.2mm 2.6mm; background:#fff; position:relative}
+.sim > div:not(:last-child)::after{content:"→"; position:absolute; right:-1.7mm; top:50%; transform:translate(50%,-50%); color:var(--accent); font-weight:700; font-size:10pt; line-height:1; background:#fff}
+.sim .st{font-size:7.6pt; font-weight:700; color:var(--accent); letter-spacing:.04em}
+.sim .nm{font-weight:700; font-size:9.4pt; margin:.4mm 0 1mm}
+.sim ul{padding-left:3.6mm; font-size:8.7pt}
+code{font-family:inherit; background:var(--accent2); padding:0 1mm; border-radius:.8mm; font-size:8.4pt; white-space:nowrap}
+.tl{display:flex; gap:1mm; margin-top:1.6mm}
+.tl .seg{border-radius:1.2mm; padding:1.6mm 2.2mm; font-size:8.5pt; line-height:1.4}
+.tl .land{background:#dfe9e3; color:var(--ink)}
+.tl .bldg{background:var(--accent); color:#fff}
+.tl .seg small{display:block; font-size:7.8pt; opacity:.85}
+.own{display:grid; grid-template-columns:1fr 34mm 1fr; gap:3mm; align-items:center}
+.own .bx{border:1px solid var(--rule); border-radius:1.4mm; padding:2.2mm 2.8mm; font-size:8.7pt; background:#fff}
+.own .bx b{display:block; font-size:9.6pt; margin-bottom:.6mm}
+.own .ce{border-color:var(--accent); background:var(--accent2)}
+.own .fund{text-align:center; border:1.5px solid var(--ink); border-radius:1.4mm; padding:3mm 2mm; font-weight:700; font-size:9.2pt; background:#fff}
+.own .fund small{display:block; font-weight:400; font-size:7.8pt; color:var(--muted)}
+.steps{display:flex; gap:1.4mm; font-size:8.4pt}
+.steps div{flex:1; background:var(--soft); border-radius:1.2mm; padding:1.8mm 2.2mm}
+.steps div b{display:block; color:var(--accent); font-size:8.2pt; margin-bottom:.4mm}
+</style>
+</head>
+<body>
+
+<!-- ================= 표지 ================= -->
+<section class="sheet">
+  <div class="kicker">Portfolio</div>
+  <h1>재무 실무 포트폴리오</h1>
+  <p class="sub" style="font-size:11.5pt; font-weight:600; color:var(--ink)">문제를 찾고, 근거로 판단하고, 절차로 남긴 기록</p>
+  <p class="sub" style="margin-top:1mm">회계정책 · 결산 · 자금 · 원가와 세무 · 연결 — 실무와 인턴 과제에서 직접 검토하고 보고한 사례를 정리했습니다.</p>
+  <div class="who"><span><b>김도현</b></span></div>
+
+  <hr class="rule">
+
+  <div class="block">
+    <h3>경력과 기반</h3>
+    <table class="t">
+      <tr><th style="width:24mm">기간</th><th style="width:58mm">소속</th><th>담당</th></tr>
+      <tr><td>2026.07 – 08</td><td>헬스케어 스타트업 A사 재무회계팀<br><span class="muted">(자회사 포함 4개 사업장)</span></td><td>월결산, 자금집행, 채권·채무 대사, 회계정책 검토, 재무분석<br><span class="muted">실무 ERP: 더존 위하고</span></td></tr>
+      <tr><td>2024.11 – 12</td><td>IT 기업 D사 재경팀 인턴</td><td>사옥 취득원가 산정, 부동산투자신탁 연결범위 검토 과제</td></tr>
+      <tr><td>기반</td><td colspan="2">공인회계사 1차 시험 3회 합격 · 학내 ERP연구회 팀장, SAP R/3 관리회계(CO) 모듈 담당</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h3>사례 목록</h3>
+    <table class="t">
+      <tr><th style="width:15mm">CASE</th><th style="width:24mm">영역</th><th>제목</th><th style="width:30mm">소속</th><th class="r" style="width:13mm">쪽</th></tr>
+      <tr><td>01</td><td>회계정책</td><td>수익인식 기준 전환 검토</td><td>A사</td><td class="r">2–3</td></tr>
+      <tr><td>02</td><td>결산</td><td>원장 미지급금 대사 절차 표준화</td><td>A사 · 자회사 B사</td><td class="r">4–5</td></tr>
+      <tr><td>03</td><td>자금</td><td>차입금 상환 시점 검토와 런웨이</td><td>자회사 B사</td><td class="r">6</td></tr>
+      <tr><td>공통</td><td>AI 활용</td><td>AI와 함께 일하는 방식</td><td>A사</td><td class="r">7</td></tr>
+      <tr><td>04</td><td>원가 · 세무</td><td>사옥 취득원가 산정</td><td>D사</td><td class="r">8–9</td></tr>
+      <tr><td>05</td><td>연결</td><td>부동산투자신탁 연결범위 편입 검토</td><td>D사</td><td class="r">10</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h3>사례에 담지 않은 업무 <span class="note">— A사 재무회계팀</span></h3>
+    <table class="t">
+      <tr><th style="width:22mm">영역</th><th>업무</th></tr>
+      <tr><td class="k">자금</td><td>월 3회 정기 자금집행 — 부서 송금요청을 증빙과 대조해 VAT 누락·계좌 오기·원천징수 누락을 지급 전에 걸러냄, 개인 사업소득 3.3% 원천징수, 집행 계좌별 자금 배치</td></tr>
+      <tr><td class="k">결산</td><td>4개 사업장 통장–전표 대사, 카드전표 전수 입력과 승인내역 대조, 매입 전자세금계산서 교차 검토, 무형자산 상각 스케줄 작성, 카드전표 거래처 자동매칭 결과를 한 달 치 전수 확인해 오류 유형을 파악하고 ERP 등록 거래처 정정</td></tr>
+      <tr><td class="k">채권·채무</td><td>잔액 조회 경로가 없던 충전식 법인카드의 선급금 대사 방법 규명, 관계사 전대차 채권의 계정 정리와 계정 원칙 수립</td></tr>
+      <tr><td class="k">재무분석</td><td>전사 고정지출·구독비용 현황 구축 — 어카운트인포로 법인 자동결제 내역 파악, 확정할 수 없던 중복 결제 의심 건은 다시 조회할 시점과 판정 방법을 함께 보고</td></tr>
+    </table>
+  </div>
+
+  <div class="warn"><b>비식별 처리</b> — 이 포트폴리오는 재직·인턴 기관의 내부 자료를 바탕으로 합니다. 회사명은 A·B·D사 등으로 바꾸었고, 거래처·개인·계좌 정보는 싣지 않았으며, 금액은 판단을 이해하는 데 필요한 규모만 남겼습니다. 원자료는 첨부하지 않았습니다.</div>
+</section>
+
+<!-- ================= CASE 01 (1/2) ================= -->
+<section class="sheet" style="--bm:6mm">
+  <div class="head">
+    <div class="kicker">Case 01 · 회계정책</div>
+    <h2>수익인식 기준 전환 검토</h2>
+    <div class="meta"><span>헬스케어 스타트업 A사 재무회계팀</span><span>2026.08</span><span>K-IFRS 제1115호</span></div>
+  </div>
+
+  <p class="lead">주력 상품인 검사 서비스(고객이 결제 → 키트 수령 → 검체 반송 → 분석결과 수령)의 매출이 결제대행사의 정산일에 인식되고 있었습니다. 이 기준을 바꿔야 한다는 문제는 이미 제기되어 있었고, 실무 부담이 적어 보이는 <b>‘구매확정일 인식 + 기말 일괄조정’(대안 A)</b>이 유력한 대안으로 논의되고 있었습니다.</p>
+  <p class="lead">저는 대안 A가 정식 회계정책이 되기 어렵다고 판단했습니다. 어차피 바꾼다면 도착점을 제대로 정하자는 취지로 선택지를 비교해, 분석결과 제공 시점에 인식하는 안(대안 C)을 건의하는 보고서를 작성했습니다.</p>
+
+  <div class="block">
+    <h3><span class="n">1</span>진단 — 현행 기준에서 어긋나 있던 것</h3>
+    <div class="stats">
+      <div class="stat"><div class="v">매월 이월되는 매출</div><div class="l">정산 시차로 매출의 일부가 매월 다음 달로 넘어감. 결제·취소 전 건을 매출일과 입금일로 대조해 확인. 연간 상쇄되지만 분·반기 손익이 왜곡됩니다.</div></div>
+      <div class="stat"><div class="v">상관계수 +0.007</div><div class="l">월 서비스매출과 서비스매출원가의 상관계수. 외주 분석비 같은 변동비가 있는데도 0에 가까워, 원가가 매출과 무관하게 잡혔습니다. 같은 손익계산서의 상품매출과 상품매출원가는 +0.723으로 함께 움직여, 차이는 계상 방법에 있었습니다. 그 결과 매출총이익률이 월마다 크게 흔들렸습니다.</div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">2</span>대안 A 검토 — 유력했지만 도착점이 될 수 없던 이유</h3>
+    <table class="t">
+      <tr><th style="width:27mm">쟁점</th><th>검토 내용</th></tr>
+      <tr><td class="k">실무 편의</td><td>대안 A는 “기중에 결과 제공 여부를 추적하기 어렵다”는 데서 출발합니다. 그러나 기말에 미이행분을 가려내려면 결국 분석결과 제공일 데이터가 필요합니다. 줄어드는 것은 집계 빈도(월 12회 → 연 1회)뿐이고, 데이터를 구축하는 부담은 대안 C와 같습니다.</td></tr>
+      <tr><td class="k">분·반기 재무제표</td><td>분기말마다 계약부채가 빠지고, 조정액이 4분기에 몰려 매년 4분기 실적이 급락하는 패턴이 생깁니다.</td></tr>
+      <tr><td class="k">내부회계관리제도</td><td>틀린 줄 알면서 인식하고 연 1회 사후에 고치는 구조라, 통제의 요건인 ‘오류의 예방 또는 적시 적발’을 충족하지 못합니다.</td></tr>
+      <tr><td class="k">회계정책 서술</td><td>기준서는 수행의무를 이행할 때 수익을 인식하도록 할 뿐, ‘일단 인식하고 기말에 조정한다’는 선택지를 두지 않습니다. 주석에 정책으로 쓸 수 없는 방식입니다.</td></tr>
+      <tr><td class="k">향후 상장 대비</td><td>지정감사인의 기말 전후 거래 검토(cut-off)와 수익인식 핵심감사사항은 회계연도 전체 거래가 대상입니다. 연말만 맞추는 방식은 오히려 집중 검토 대상이 됩니다.</td></tr>
+      <tr class="pick"><td class="k">판정</td><td>정식 정책으로는 부적합. 분석결과 제공일 데이터가 쌓이기 전까지 쓰는 <b>과도기 조치로만</b> 유효하다고 정리했습니다.</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">3</span>실무진의 우려와 해소</h3>
+    <table class="t">
+      <tr><th style="width:32mm">실무진의 우려</th><th>해소한 방법</th></tr>
+      <tr><td class="k">전환 시점의 매출 감소</td><td>인식 시점이 결과 제공 시점으로 늦춰지면서 생기는 <b>일시적인 이연</b>이며 전환 시점에 한 번뿐입니다. 소급 적용하면 비교재무제표도 함께 조정됩니다.</td></tr>
+      <tr><td class="k">제공 시점 데이터</td><td>자사몰 분석결과 게시글에 키트 바코드 일련번호가 이미 기록되고 있어, <b>새 시스템 없이</b> 제공 시점을 특정할 수 있음을 제시했습니다(5번 데이터 확보).</td></tr>
+      <tr class="pick"><td class="k">전환의 실익</td><td>서비스매출과 원가가 따로 움직이는 것을 상관계수로 보여, 인식 시점을 맞추면 <b>수익과 비용이 대응되어 과도한 이익률 변동성을 낮출 수 있다</b>고 설득했습니다.</td></tr>
+    </table>
+  </div>
+
+</section>
+
+<!-- ================= CASE 01 (2/2) ================= -->
+<section class="sheet">
+  <div class="contd"><span class="kicker">Case 01 · 계속</span><span class="t">수익인식 기준 전환 검토</span></div>
+
+  <div class="block">
+    <h3><span class="n">4</span>대안 비교와 건의</h3>
+    <table class="t">
+      <tr><th style="width:15mm">안</th><th style="width:37mm">인식 시점</th><th>검토 결과</th></tr>
+      <tr><td>현행</td><td>결제대행사 정산일</td><td><b>폐기</b> — 회사가 정할 수 없는 날짜이고, 미이행 의무(계약부채)가 장부에 나타나지 않음</td></tr>
+      <tr><td>대안 A</td><td>구매확정일 + 기말 일괄조정</td><td><b>과도기 조치로만</b> — 연차 재무제표는 맞으나 분·반기, 내부통제, 정책 서술에서 한계</td></tr>
+      <tr><td>대안 B</td><td>키트·분석 두 수행의무로 분할</td><td><b>보류</b> — 원가 배부 모델로 제품:용역 원가 비율까지 시산했지만, 배부 가중치가 검증되지 않았고 분모가 분석건수가 아닌 판매건수이며 마진이 반영되지 않아 거래가격 배분에 쓸 수 없음. 키트가 자사 분석에 종속돼 구별 요건(문단 27) 충족도 어려움</td></tr>
+      <tr class="pick"><td>대안 C</td><td>분석결과 제공일</td><td><b>건의</b> — 단일 수행의무로 이행 시점과 일치, 계약부채를 상시 인식, 회계추정 최소화, 내부통제 설계 가능</td></tr>
+    </table>
+    <p class="note" style="margin-top:1.4mm">근거 — 고객은 키트만으로 얻는 효익이 없고 분석결과를 받을 때 효익을 얻으므로 하나의 수행의무입니다. 제공 시점은 먼저 나가는 알림톡의 ‘발송’ 기준으로 잡아, 수신 여부와 관계없이 모든 건이 기록되게 했습니다.</p>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">5</span>실행 설계</h3>
+    <div class="flow">
+      <div><b>결제</b>계약부채 인식</div>
+      <div><b>키트 발송</b>키트원가를 자산으로 이연</div>
+      <div><b>결과 제공</b>매출·매출원가 인식</div>
+      <div><b>유효기간 만료</b>미행사분 인식</div>
+    </div>
+    <div class="half" style="margin-top:3mm">
+      <div>
+        <h4>환불부채 — 주문 전수 실측</h4>
+        <table class="t">
+          <tr><th>구분</th><th class="r">비중</th><th>처리</th></tr>
+          <tr><td>결제 전 취소</td><td class="r">일부</td><td>처리 대상 아님</td></tr>
+          <tr><td>결제 후 취소</td><td class="r">일부</td><td>계약부채 차감</td></tr>
+          <tr><td>키트 반품</td><td class="r">소수</td><td>계약부채 차감, 이연 원가 비용화</td></tr>
+          <tr class="pick"><td>결과 제공 후 클레임</td><td class="r">극소수</td><td>유일한 환불부채 대상</td></tr>
+        </table>
+        <p class="note" style="margin-top:1.2mm">대안 C에서는 설정 대상이 극히 적어 중요성 기준상 설정을 생략할 수 있습니다. 대안 A였다면 반품률 전체가 대상이 됩니다.</p>
+      </div>
+      <div>
+        <h4>데이터 확보 — 전환의 병목</h4>
+        <ul>
+          <li><b>우선순위</b> ① 분석결과 제공일 ② 주문–키트 매핑 ③ 검체 접수일 ④ 키트 발송일</li>
+          <li>키트 박스와 검체통에 같은 바코드가 붙어 있어, 새 시스템 없이 스캔 시점만 기록하면 주문–접수–제공을 이을 수 있음을 제시</li>
+          <li>자사몰 분석결과 게시글에 <b>키트 바코드 일련번호가 이미 기록되고 있는 것</b>을 발견해, 새 기준의 인식 시점 데이터로 쓸 수 있음을 제시</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div>
+      <h3><span class="n">6</span>전환 시점과 남는 과제</h3>
+      <ul>
+        <li><b>월 마감 절차</b> — 월말 제공 내역 추출 → 해당 건 매출 인식 → 마감 후 건은 다음 달로 → 제공 건수와 계약부채 감소 건수 대사</li>
+        <li><b>전환 시점</b> — 정책 변경은 소급 적용이 원칙이라, 향후 상장을 염두에 두면 전환이 늦어질수록 재작성할 기간이 늘어남</li>
+        <li><b>한계 명시</b> — 매출·원가 대응을 완성하려면 원가 계상 방식 개선이 함께 필요해 별도 과제로 분리 보고. 약관의 유효기간 기산일 확인, BOM 정비도 병행 과제로 제시</li>
+      </ul>
+    </div>
+    <div class="ai">
+      <div class="tag">AI 활용과 검증</div>
+      <dl>
+        <dt>클로드에 맡긴 것</dt><dd>주문·정산·원가 자료의 집계, 180여 종 상품명 분류, 상관계수 산출</dd>
+        <dt>한계 → 클로드 코드</dt><dd>분류 기준을 여러 차례 다시 잡아야 했고 쓸 수 없는 자료도 섞여, 형식을 맞춘 과거 자료와 확정 기준·유의사항 파일을 로컬 폴더에 두고 작업</dd>
+        <dt>직접 정한 것</dt><dd>분류·제외 기준, 비교 관점, 보고할 범위</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="out"><b>결과</b> 건의안을 보고했고, 회사는 새 기준의 적용 검토에 돌입했습니다.<br><b>결과물</b> 「수익인식 시점 전환 방안」 보고서(진단 · 대안 검토 · 실행 3부), 재현용 집계 스크립트</div>
+</section>
+
+<!-- ================= CASE 02 (1/2) ================= -->
+<section class="sheet" style="--bm:6mm">
+  <div class="head">
+    <div class="kicker">Case 02 · 결산</div>
+    <h2>원장 미지급금 대사 절차 표준화</h2>
+    <div class="meta"><span>A사 · 자회사 B사 (4개 사업장)</span><span>2026.07 월결산</span><span>ERP 더존 위하고</span></div>
+  </div>
+
+  <p class="lead">월결산 점검에서 원장 미지급금 잔액의 총차이는 1천 원대에 불과했지만, 카드별로 열어 보니 큰 차이들이 서로 상쇄되어 가려져 있었습니다. 원인을 유형별로 규명해 정정하고, 매달 같은 결과가 나오도록 표준 절차서로 남겼습니다.</p>
+
+  <div class="block">
+    <h3><span class="n">1</span>문제</h3>
+    <div class="stats">
+      <div class="stat"><div class="v">원장 잔액 총차이 1천 원대</div><div class="l">한 법인의 원장 미지급금 잔액 총액 기준으로는 사실상 일치</div></div>
+      <div class="stat"><div class="v">카드별로는 큰 불일치</div><div class="l">카드별로 나누자 여러 장에서 불일치. 자동 생성된 카드전표에서 누적된 차이</div></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">2</span>검증 자료 — 세 가지 자료가 서로 다른 숫자를 말함</h3>
+    <table class="t">
+      <tr><th style="width:24mm">자료</th><th>확인할 수 있는 것</th><th>한계</th></tr>
+      <tr><td class="k">청구명세서</td><td>카드별 청구액, 건별 확정 청구금액, 부분취소 후 순액</td><td>확정 시점 기준이라 이후의 취소가 반영되지 않음</td></tr>
+      <tr><td class="k">승인내역</td><td>매입상태(취소 여부), 취소일자, 승인번호</td><td>연회비·수수료 등 승인이 없는 항목은 빠짐</td></tr>
+      <tr><td class="k">통장</td><td>실제 출금액</td><td>카드별 내역이 없음</td></tr>
+    </table>
+    <p class="note" style="margin-top:1.2mm">실제로 명세서에는 원금액이 남아 있는데 승인내역은 매출취소인 건, 승인금액과 청구금액이 다른 건, 명세서 합계와 실제 출금액이 다른 달이 모두 나왔습니다. 그래서 어느 한 자료만 기준으로 삼지 않고 자료마다 볼 곳을 나눴습니다.</p>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">3</span>원인 규명</h3>
+    <table class="t">
+      <tr><th style="width:24mm">유형</th><th>증상</th><th>확인 방법</th><th>처리</th></tr>
+      <tr><td class="k">취소 미반영</td><td>취소·부분취소 건이 원승인 금액으로 원장에 남음</td><td>카드사별로 다름 — 같은 승인번호가 두 줄인지, 이용금액과 결제금액이 다른지, 승인내역 매입상태</td><td>전액취소는 확정 제외, 부분취소는 순액으로 수정</td></tr>
+      <tr><td class="k">매입 지연</td><td>월말 해외승인이 다음 달에 매입되어 누락</td><td>명세서에는 있고 원장에는 없음</td><td>승인 월에 기표, 다음 달 중복 확인</td></tr>
+      <tr><td class="k">전표 누락</td><td>매입 건의 전표가 생성되지 않음</td><td>명세서에는 있고 원장 어디에도 없음</td><td>거래처 무관 조회 후 추가 기표</td></tr>
+      <tr><td class="k">해외 환산차이</td><td>전표는 승인 시점, 청구는 매입 시점 환율</td><td>해외 건만 뽑아 명세서 이용금액과 대조</td><td>당월분은 이용금액으로 수정, 전기 누적분은 잡손실</td></tr>
+      <tr><td class="k">대금 배부 오류</td><td>여러 카드의 결제대금이 한 카드로 몰려 계상</td><td>배부액 합계와 통장 출금액 검산</td><td>명세서 청구금액 기준으로 카드별 배부</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= CASE 02 (2/2) ================= -->
+<section class="sheet" style="--bm:10mm">
+  <div class="contd"><span class="kicker">Case 02 · 계속</span><span class="t">원장 미지급금 대사 절차 표준화</span></div>
+
+  <div class="grid2">
+    <div>
+      <h3><span class="n">4</span>판단</h3>
+      <ul>
+        <li><b>대사식을 법인별로 분리</b> — 모회사는 사용액 쪽이, 자회사는 결제액 쪽이 틀려 있어 같은 절차로 볼 수 없었습니다.
+          <div class="formula">A사 　전월말 잔액 = 당월 청구액<br>B사 　전월말 잔액 = 전월 사용액 − 전월 선결제액</div></li>
+        <li><b>기준을 명세서에서 통장으로</b> — 전기분 취소 크레딧은 명세서 이용내역에 실리지 않아, 명세서를 기준으로 삼는 한 매월 차이가 남습니다. 실제 출금액을 기준으로 옮겼습니다.</li>
+        <li><b>원인을 찾는 방향 고정</b> — 대사식을 정리해 보니 남는 잔액은 결국 전월 이전에서 온다는 것이 드러나, 차이가 나면 전월분부터 보도록 순서를 정했습니다.</li>
+      </ul>
+    </div>
+    <div class="ai">
+      <div class="tag">AI 활용과 검증</div>
+      <dl>
+        <dt>클로드에 맡긴 것</dt><dd>카드 수십 장의 원장·명세서·승인내역을 카드별로 갈라 대조</dd>
+        <dt>한계</dt><dd>처음에는 비체계적인 파일을 그대로 넘기고 막연하게 질문해 쓸 수 없는 결과를 받았고, 이후에도 취소 건을 정상 청구로 잘못 분류한 것을 발견</dd>
+        <dt>클로드 코드로 바꾼 방식</dt><dd>형식을 일치시킨 과거 자료를 로컬 폴더에 넣어 학습하게 하고, 규명한 원인별 사례를 파일로 정리해 그것을 토대로 문제를 식별하게 함</dd>
+        <dt>직접 확인</dt><dd>장부에 반영될 숫자는 원자료를 직접 확인</dd>
+      </dl>
+    </div>
+  </div>
+
+  <div class="block" style="margin-top:4.6mm">
+    <h3><span class="n">5</span>같은 방식의 확장 — 여러 장의 카드대금 배분</h3>
+    <p>한 카드사는 여러 장의 대금이 통장에서 한두 건으로 빠져나가는데 장부는 카드별로 계상되어야 해서, 매월 미결로 남던 항목이었습니다.</p>
+    <ul style="margin-top:1.4mm">
+      <li>원장 잔액, 카드사 청구액, 실제 출금액이 서로 달랐습니다. 차액을 하나로 묶어 맞추지 않고 <b>일곱 가지 사유</b>(월말 걸침, 취소 시점차, 환율 확정차, 연회비·할부, 선결제, 장부에만 있는 건, 카드내역에만 있는 건)로 나눠 원장 잔액부터 통장 출금액까지 연결했습니다.</li>
+      <li>결과적으로 카드대금을 원 단위까지 맞췄고, 대부분 카드의 잔액을 정리했습니다. 남은 건은 다음 달 청구에서 해소되는 건임을 확인했습니다.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">6</span>결과물 — 표준 절차서</h3>
+    <p class="note" style="margin-bottom:1.6mm">법인별 대사식, 차이유형 판정표, 카드사별 확인 위치와 메뉴, 전표 작성 규칙을 담고, 실무에서 바로 쓸 부분을 월결산 체크리스트로 정리했습니다.</p>
+    <div class="steps">
+      <div><b>① 자료 준비</b>카드사별 청구명세서, 매입상태가 나오는 승인내역, 통장 출금 내역, 카드별 거래처원장</div>
+      <div><b>② 대금 배부</b>자동매칭된 거래처를 그대로 확정하지 않고 카드사별 기준 금액으로 배부, 합계를 출금액과 검산</div>
+      <div><b>③ 총액 확인</b>통장 출금액과 카드사 청구총액 대조. 다르면 전월 취소 크레딧·분할출금·비승인 항목 검토</div>
+      <div><b>④ 원인 점검</b>취소 미반영, 매입 지연, 전표 누락, 환산차이 순서로 확인</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= CASE 03 ================= -->
+<section class="sheet" style="--bm:8mm">
+  <div class="head">
+    <div class="kicker">Case 03 · 자금</div>
+    <h2>차입금 상환 시점 검토와 런웨이</h2>
+    <div class="meta"><span>A사 자회사 B사</span><span>2026.07 – 08</span><span>거래 은행 통합 · 엑셀 시뮬레이션</span></div>
+  </div>
+
+  <p class="lead">A사 그룹은 흩어진 거래 은행과 카드를 한곳에서 관리하는 방안을 검토하고 있었습니다. 자회사 B사는 기존 거래 은행에 보증이 걸린 대출이 남아 있어, 보증 관련 보고가 계속 따라오는 상황이었습니다. 이참에 대출을 갚고 모든 거래를 옮길지 판단할 자료를 만들었습니다.</p>
+  <p class="lead">이자만 보면 미리 갚는 쪽이 유리해 보였지만, 그 계산에는 상환할 때 따라오는 보증 약정상 위약벌과 중도상환수수료가 빠져 있었습니다. 또 상환하면 그만큼 예금이 줄어드니, 상환 후에도 운영자금이 충분한지 함께 봐야 했습니다.</p>
+
+  <div class="block">
+    <h3><span class="n">1</span>시뮬레이션 구성 <span class="note">— 엑셀 2개 시트, 입력값만 바꾸면 전체가 다시 계산되도록 수식으로 연결</span></h3>
+    <div class="sim">
+      <div><div class="st">시트 1</div><div class="nm">월별 현금흐름</div><ul><li>과거 통장 거래를 월별 유입·유출·순현금흐름으로 집계</li><li>연도별 합계와 월평균 산출</li><li><code>월 순유출 = 올해 월평균</code></li></ul></div>
+      <div><div class="st">시트 2 · 입력</div><div class="nm">대출 조건</div><ul><li>대출별 원금잔액, 약정이율, 이자납입일</li><li><code>1일 이자 = 원금 × 이율 ÷ 365</code></li><li>약정상 위약벌, 중도상환수수료</li></ul></div>
+      <div><div class="st">시트 2 · 계산</div><div class="nm">상환 시점별 시뮬레이션</div><ul><li><code>이자 = 경과일 × 1일 이자</code></li><li>만기 전 상환이면 위약벌·수수료 가산</li><li><code>런웨이 = 상환 후 예금 ÷ 월 순유출</code></li></ul></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">2</span>상환 시점별 결과 <span class="note">— 공개용으로 금액과 기간은 상대 비교로만 표기</span></h3>
+    <table class="t">
+      <tr><th>상환 시점</th><th class="r">이자비용</th><th class="r">위약벌</th><th class="r">중도상환수수료</th><th class="r">상환비용 합계</th><th class="r">상환 후 런웨이</th></tr>
+      <tr><td>1개월 뒤 조기상환</td><td class="r">적음</td><td class="r">발생</td><td class="r">소액</td><td class="r">만기 상환보다 큼</td><td class="r">충분</td></tr>
+      <tr><td>2개월 뒤 조기상환</td><td class="r">중간</td><td class="r">발생</td><td class="r">소액</td><td class="r">가장 큼</td><td class="r">충분</td></tr>
+      <tr class="pick"><td>만기 상환</td><td class="r">가장 많음</td><td class="r">—</td><td class="r">—</td><td class="r"><b>가장 작음</b></td><td class="r">충분</td></tr>
+    </table>
+    <p class="note" style="margin-top:1.2mm">대출별 상환비용 표를 따로 두어, 비용이 어느 대출에서 생기는지도 나눠 볼 수 있게 했습니다.</p>
+  </div>
+
+  <p>조기상환으로 줄어드는 이자보다 위약벌이 커서 <b>만기까지 두는 편이 총비용 기준으로 유리</b>했습니다. 상환 후에도 운영자금이 충분해 자금 부족 문제가 없으므로, 만기에 상환하고 거래를 옮기면 되며 대출을 연장할 필요는 없다고 보고했습니다.</p>
+
+  <div class="out"><b>결과물</b> 상환 시기별 비용·런웨이 시뮬레이션</div>
+</section>
+
+<!-- ================= 공통 · AI ================= -->
+<section class="sheet" style="--bm:6mm">
+  <div class="head">
+    <div class="kicker">공통 · AI 활용</div>
+    <h2>AI와 함께 일하는 방식</h2>
+    <div class="meta"><span>A사 재무회계팀</span><span>2026.07 – 08</span><span>4개 사업장 실무 전반</span></div>
+  </div>
+
+  <p class="lead">시험을 준비하는 동안에는 AI를 실무에서 써 볼 기회가 없었습니다. AI를 적극 활용하는 회사에서 클로드와 클로드 코드를 재무회계 업무 전반에 적용하면서, 무엇을 맡기고 무엇을 직접 확인할지의 기준을 세웠습니다.</p>
+
+  <div class="half block">
+    <div class="box">
+      <h4>처음의 시행착오</h4>
+      <p>처음에는 비체계적인 파일을 그대로 넘기고 막연하게 질문해 쓸 수 없는 결과를 받는 일이 반복됐습니다. 어느 데이터를 쓸지, 어느 과정에 붙일지를 먼저 정하고 나서야 도구로 쓸 수 있었습니다.</p>
+    </div>
+    <div class="box">
+      <h4>익숙해진 뒤 달라진 두 가지</h4>
+      <ul>
+        <li><b>검토 범위</b> — 표본으로 넘겼을 자료를 전수로 확인할 수 있게 됐습니다.</li>
+        <li><b>일하는 순서</b> — 집계를 돌려 두고 다른 검토를 이어가는 식으로 여러 건을 동시에 끌고 갈 수 있게 됐습니다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ai block">
+    <div class="tag">한계에서 바꾼 작업 환경 — 클로드 코드</div>
+    <p style="font-size:8.9pt; margin-bottom:1.2mm">분류 기준을 여러 차례 다시 잡아야 했고, 취소 건을 잘못 분류하는 오류도 있어 작업 환경을 바꿨습니다.</p>
+    <dl>
+      <dt>로컬 폴더</dt><dd>형식을 일치시킨 과거 자료와 원자료를 한곳에 모아 같은 자료를 토대로 작업</dd>
+      <dt>기준 파일</dt><dd>확정한 분류 기준과 수치, 유의사항, 규명한 원인별 사례를 파일로 정리해 이후 작업의 전제로 삼음</dd>
+      <dt>재현 스크립트</dt><dd>집계 과정을 스크립트로 남겨, 기준이 바뀌거나 담당자가 바뀌어도 같은 결과를 다시 낼 수 있게 함</dd>
+    </dl>
+  </div>
+
+  <div class="block">
+    <h3>판단사항 — 업무별로 다시 확인해 걸러낸 것</h3>
+    <table class="t">
+      <tr><th style="width:30mm">업무</th><th style="width:52mm">AI에 맡긴 것</th><th>다시 확인해 걸러낸 것</th></tr>
+      <tr><td class="k">원장 미지급금 대사</td><td>카드별 원장·명세서·승인내역 대조</td><td>취소 건을 정상 청구로 잘못 분류한 것을 승인내역으로 적발. 이후 원인별 사례 파일을 두어 같은 유형을 식별하게 함</td></tr>
+      <tr><td class="k">수익인식 검토</td><td>주문·정산·원가 자료 집계, 상관계수 산출</td><td>5월 양식을 복사해 갱신하지 않은 매출 자료를 가려내 제외. 한 결제대행사 정산 2,704건은 전수 확인해 검사 상품과 무관함을 확인</td></tr>
+      <tr><td class="k">카드대금 배분</td><td>조합 탐색, 승인번호 단위 대조</td><td>맞다고 판정된 조합도 산식으로 재확인. 금액이 우연히 일치한 경우가 실제로 있었음</td></tr>
+      <tr><td class="k">고정지출 정리</td><td>여러 카드사 승인내역에서 반복 결제 추출</td><td>추출 결과를 카드 원자료로 다시 맞춰 보다가, 기존 현황 파일과 다른 부분을 찾아 바로잡음</td></tr>
+    </table>
+  </div>
+
+  <div class="grid3 block">
+    <div class="box"><h4>결정한 것</h4><ul><li>무엇이 문제이고 어디부터 볼지</li><li>어떤 자료를 근거로 삼을지</li><li>결과를 어떻게 해석하고 무엇을 보고할지</li><li>어디까지 확정으로 말할지</li></ul></div>
+    <div class="box"><h4>맡긴 것</h4><ul><li>흩어진 원본 자료의 변환·집계</li><li>반복 대조와 전수 확인</li><li>조합·경우의 수 탐색</li><li>문서 초안 작성</li></ul></div>
+    <div class="box"><h4>반드시 다시 본 것</h4><ul><li>장부에 반영될 숫자</li><li>카드사 원자료와의 대조</li><li>그럴듯하지만 근거가 보이지 않는 결론</li><li>가정이 섞여 들어간 계산</li></ul></div>
+  </div>
+
+  <p class="lesson">AI는 판단을 대신해주지는 않았습니다. 다만, 그 판단의 근거를 넓힐 수 있게 해주었습니다. 도구가 낸 결과에 신뢰성을 부여하려면 사람의 정확한 판단과 검토가 필요함을 체감했습니다.</p>
+
+</section>
+
+<!-- ================= CASE 04 (1/2) ================= -->
+<section class="sheet" style="--bm:6mm">
+  <div class="head">
+    <div class="kicker">Case 04 · 원가 · 세무</div>
+    <h2>사옥 취득원가 산정</h2>
+    <div class="meta"><span>IT 기업 D사 재경팀 인턴</span><span>2024.11 – 12</span><span>K-IFRS 제1023호 · 제1016호 · 제1040호 · 지방세법</span></div>
+  </div>
+
+  <p class="lead">신축 본사 사옥의 취득원가를 제공된 자료를 바탕으로 산정하고, 자산과 비용을 분류하고, 취득 후 관리할 사항까지 제시한 과제입니다. 차입원가 자본화 → 자산·비용 분류 → 취득세 → 사후관리 순서로 검토했습니다.</p>
+
+  <div class="block">
+    <h3><span class="n">1</span>차입원가 자본화</h3>
+    <div class="grid2">
+      <div>
+        <ul>
+          <li><b>적격자산</b> — 의도된 용도로 쓰기까지 상당한 기간이 필요한 토지와 건물(문단 5·7)</li>
+          <li><b>가정</b> — 사옥 취득 목적의 특정차입금은 없고, 일반차입금은 자본화 종료 후에도 상환되지 않고 남음. 종료 연도의 적수를 연말까지 계산하기 위한 가정</li>
+          <li><b>종료 시점</b> — 대부분의 공사가 끝나 실제 사용을 시작하기 직전일(문단 22·23)</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h4>자본화 결과</h4>
+        <p style="font-size:9pt">자본화된 차입원가 중 <b>토지 약 18%, 건물 약 82%</b>. 자본화가 끝난 뒤의 지출은 차입원가를 자본화하지 않되, 자본적 지출이므로 건물 원가에 가산했습니다.</p>
+      </div>
+    </div>
+    <div class="tl">
+      <div class="seg land" style="flex:25">토지 자본화<small>매입부터 조성공사 완료까지</small></div>
+      <div class="seg bldg" style="flex:37">건물 자본화<small>착공부터 사용 가능 시점까지</small></div>
+    </div>
+    <div class="box" style="margin-top:2.4mm">
+      <h4>판단 — 토지 지출에서 생긴 차입원가의 귀속이 바뀌는 시점</h4>
+      <p>토지 조성이 끝난 뒤에도 그 토지 지출액에서는 차입원가가 계속 생깁니다. 그러나 그 이후의 차입원가는 이어지는 건물 신축을 위해 생기는 것이므로 건물의 자본적 지출로 보았습니다. 그래서 조성이 끝난 해는 같은 지출액이라도 날짜로 나눠 앞부분은 토지, 뒷부분은 건물에 자본화했고, 이듬해부터는 전액을 건물에 자본화했습니다.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">2</span>자산 · 비용 분류</h3>
+    <table class="t">
+      <tr><th style="width:24mm">분류</th><th style="width:62mm">판단 기준</th><th>결과</th></tr>
+      <tr><td class="k">투자부동산</td><td>분리해 매각할 수 있거나, 본점 직원이 누릴 수 없는 공간인가(제1040호 문단 10)</td><td>임대오피스로 쓰는 일부 층</td></tr>
+      <tr><td class="k">유형자산</td><td>그 외 건물과 토지. 공용공간은 회계기준만으로 경계가 잡히지 않아 회계기준원 사례를 참고, 특정 임차인이 아니라 관계사가 함께 쓰는 관리 목적 공간으로 판단</td><td>건물로 분류</td></tr>
+      <tr><td class="k">비품</td><td>건물에서 분리해 별도로 쓸 수 있는가</td><td>미술품, 실내 미디어 설비, 가구 등</td></tr>
+      <tr><td class="k">비용</td><td>자산을 쓸 수 있는 상태로 만드는 데 직접 관련된 원가인가 — 제1016호 문단 17의 예시와 대조</td><td>기존 사옥에서의 이전 용역비(최초 운송이 아닌 추가 이전), 절세 목적의 세무자문료(설계·취득 관련 전문가 수수료가 아님)</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ================= CASE 04 (2/2) ================= -->
+<section class="sheet" style="--bm:10mm">
+  <div class="contd"><span class="kicker">Case 04 · 계속</span><span class="t">사옥 취득원가 산정</span></div>
+
+  <div class="block">
+    <h3><span class="n">3</span>취득세 중과 판단 <span class="note">— 과제로 주어지지 않은 항목</span></h3>
+    <div class="box" style="margin-bottom:2.6mm">
+      <p>자산 분류 기준을 찾으려 본 회계기준원 사례에서 취득세 중과세율을 언급한 대목을 발견했습니다. D사 사옥도 대상인지 지방세법 제13조와 수도권정비계획법을 찾아 확인했고, 과밀억제권역에 본점용으로 신축한 건물이라 중과 대상임을 확인했습니다.</p>
+    </div>
+    <div class="half">
+      <div>
+        <h4>본점의 범위 — 두 가지 질문으로 나눔</h4>
+        <ul>
+          <li><b>본점 직원이 쓸 수 없는 배타적 공간인가?</b> → 임대오피스는 제외</li>
+          <li><b>직원을 위한 공간이지만 복지후생시설인가?</b> → 직원식당, 도서관, 카페는 제외</li>
+          <li>주차장·계단 등 공용면적은 포함 — 배타적으로 쓰는 구조가 아니면 건물 사용자 전체를 위한 시설로 본 행정심판·조세심판 결정례를 근거로 삼음</li>
+          <li>결과 — 본점과 본점 외 <b>면적 비율로 과세표준 안분</b></li>
+        </ul>
+      </div>
+      <div>
+        <h4>세율과 영향</h4>
+        <table class="t">
+          <tr><th>구분</th><th class="r">표준세율</th><th class="r">중과 가산</th><th class="r">적용</th></tr>
+          <tr><td>토지</td><td class="r">4%</td><td class="r">4%</td><td class="r"><b>8%</b></td></tr>
+          <tr><td>건물(본점)</td><td class="r">2.8%</td><td class="r">4%</td><td class="r"><b>6.8%</b></td></tr>
+          <tr><td>건물(본점 외)</td><td class="r">2.8%</td><td class="r">—</td><td class="r">2.8%</td></tr>
+        </table>
+        <p class="note" style="margin-top:1.2mm">중과 가산은 중과기준세율(2%)의 2배. 농어촌특별세 0.2%, 지방교육세 0.16%를 더해 최종 취득원가에 반영했습니다. 취득세 등은 최종 취득원가의 약 6%로, 확인하지 않았다면 취득원가가 실제보다 작게 잡혔을 항목입니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">4</span>사후관리 제안</h3>
+    <table class="t">
+      <tr><th style="width:26mm">항목</th><th>내용</th></tr>
+      <tr><td class="k">감가상각</td><td>회사 정책에 따라 건물·투자부동산은 50년, 비품은 3~10년 정액법. 사용 개시 연도는 월할로 계산하는 예시 제시</td></tr>
+      <tr><td class="k">면적 변동</td><td>용도가 바뀌면 투자부동산과 유형자산 사이에 대체(제1040호 문단 57). 직원이 늘어 임대 공간을 사무실로 쓰면 투자부동산 → 건물, 추가로 임대하면 건물 → 투자부동산 분개 제시</td></tr>
+      <tr><td class="k">지방세 감면</td><td>사옥이 감면 대상 산업단지에 있어, 지방세특례제한법에 따라 중소기업에 임대하는 부분의 취득세를 50% 경감받을 수 있음을 확인. <code>임대분 과세표준 × 표준세율 2.8% × 50%</code>로 경감액 산출</td></tr>
+      <tr><td class="k">유의사항</td><td>감면 취소와 가산세를 피하려면 입주기업이 중소기업기본법상 중소기업에 해당하는지 확인해야 한다는 점 명시</td></tr>
+    </table>
+  </div>
+
+  <div class="out"><b>결과물</b> 발표자료, 연도별 차입원가 자본화·취득세·취득원가 산정 워크시트</div>
+</section>
+
+<!-- ================= CASE 05 ================= -->
+<section class="sheet">
+  <div class="head">
+    <div class="kicker">Case 05 · 연결</div>
+    <h2>부동산투자신탁 연결범위 편입 검토</h2>
+    <div class="meta"><span>IT 기업 D사 재경팀 인턴</span><span>2024.11</span><span>K-IFRS 제1110호</span></div>
+  </div>
+
+  <p class="lead">부동산투자신탁 R을 D사의 연결재무제표에 포함해야 하는지 판단한 과제입니다. D사 연결실체의 지분율이 50%를 초과하지 않아 지분율만으로는 결론을 낼 수 없었고, 나머지 지분을 가진 회사와 투자규약까지 들여다봐야 했습니다.</p>
+
+  <div class="block">
+    <h3><span class="n">1</span>지분 구조</h3>
+    <div class="own">
+      <div class="bx ce"><b>D사 연결실체</b>종속회사 E사와 종속회사 F사(집합투자업자)가 보유<br>합산 지분율은 50%를 넘지 않음</div>
+      <div class="fund">부동산투자신탁 R<small>사모 · 수익증권 100%</small></div>
+      <div class="bx"><b>관계사 S사 — 나머지 지분</b>D사가 S사의 최대주주<br>D사와 같은 지배주주 계열이 함께 주주로 참여</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">2</span>판단 1 — 나머지 지분을 가진 S사는 D사와 다른 결정을 할 수 있는가</h3>
+    <ul>
+      <li><b>주주 구성</b> — D사와 S사는 같은 지배주주와 그 특수관계자를 주주로 공유합니다. 이들과 D사를 합한 S사 지분이 소액주주 지분보다 훨씬 커서, S사가 D사에 반하는 결정을 할 것으로 기대하기 어렵습니다.</li>
+      <li><b>정관</b> — S사 이사는 출석 의결권의 과반수이면서 발행주식총수의 4분의 1 이상으로 선임되고 집중투표제는 적용하지 않습니다. D사 단독 지분만으로도 이사 선임에 중요한 영향력을 행사할 수 있습니다.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3><span class="n">3</span>판단 2 — 투자규약으로 본 지배력의 세 요소</h3>
+    <table class="t">
+      <tr><th style="width:26mm">요소</th><th style="width:24mm">기준서</th><th>투자규약에서 확인한 것</th></tr>
+      <tr><td class="k">힘</td><td>문단 10–14</td><td>집합투자업자를 바꾸려면 수익자 전원의 동의가 필요 → 연결실체가 반대하면 운용사를 해임할 수 없어, 다른 당사자의 해임권이 실질적이지 않음</td></tr>
+      <tr><td class="k">변동이익</td><td>문단 15–16</td><td>운용에서 생긴 이익을 수익자에게 분배받을 권리가 있음. 다른 수익자도 좌수에 따라 균등한 권리를 가져 비지배지분으로 이익을 나눔</td></tr>
+      <tr><td class="k">힘과 이익의 연관</td><td>문단 17–18, B62</td><td>투자 가이드라인 안에서 투자와 결정 권한을 보유 → 대리인이 아닌 본인으로 볼 요인</td></tr>
+    </table>
+  </div>
+
+  <div class="half">
+    <div class="box">
+      <h4>결론 — 연결범위에 편입</h4>
+      <p>단순 합산 지분율은 50%를 넘지 않지만, 나머지 지분에 같은 특수관계자가 넓게 분포해 의사결정에 충분히 기여할 수 있고, 기준서의 지배력 세 요소를 모두 갖추어 종속기업으로 편입해야 한다고 판단했습니다.</p>
+    </div>
+    <div>
+      <h4>참고한 자료</h4>
+      <ul class="note">
+        <li>공정거래위원회 기업집단 소유지분도</li>
+        <li>회계기준원 질의회신 — 부동산투자신탁의 실질적인 현재 소유권</li>
+        <li>금융감독원 질의회신 — 정책형 펀드의 연결 여부 판단(포함·불포함 사례 2건)</li>
+        <li>해당 부동산투자신탁의 집합투자규약</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="out"><b>결과물</b> 연결범위 편입 여부 검토 보고서</div>
+</section>
+
+</body>
+</html>
